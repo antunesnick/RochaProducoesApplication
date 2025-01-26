@@ -1,29 +1,29 @@
 document.getElementById("formCadastro").addEventListener('submit', function(event) {
     event.preventDefault();
 
-    const name = document.getElementById("name");
-    const email = document.getElementById("email");
-    const phone = document.getElementById("tel");
-    const gender = document.getElementsByName("gender");
-    const birth = document.getElementById("birth_date");
-    const zipcode = document.getElementById("cep");
-    const city = document.getElementById("city");
-    const state = document.getElementById("state");
-    const address = document.getElementById("address");
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("tel").value;
+    const gender = Array.from(document.getElementsByName("gender")).find(g => g.checked)?.value;
+    const birth = document.getElementById("birth_date").value;
+    const zipcode = document.getElementById("cep").value;
+    const city = document.getElementById("city").value;
+    const state = document.getElementById("state").value;
+    const address = document.getElementById("address").value;
 
     const costumer = {
-        name: name,
-        email: email,
-        phone: phone,
-        gender: gender,
-        birth: birth,
-        zipcode: zipcode,
-        city: city,
-        state: state,
-        address: address
+        costumerName: name,
+        costumerEmail: email,
+        costumerPhone: phone,
+        costumerGender: gender,
+        costumerBirth: birth,
+        costumerZipcode: zipcode,
+        costumerCity: city,
+        costumerState: state,
+        costumerAddress: address
     }
 
-    fetch('https://localhost:8080/costumer/create', {
+    fetch('http://localhost:8080/costumer/create', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
