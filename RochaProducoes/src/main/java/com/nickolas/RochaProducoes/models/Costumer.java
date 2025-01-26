@@ -18,7 +18,7 @@ public class Costumer {
     @Column(name = "costumer_name", nullable = false)
     private String costumerName;
 
-    @Column(name = "costumer_email", nullable = false)
+    @Column(name = "costumer_email", nullable = false, unique = true)
     private String costumerEmail;
 
     @Column(name = "costumer_phone", nullable = false, length = 14)
