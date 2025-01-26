@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+    <title>Rocha Produções</title>
+</head>
+<body>
+    <div class="box">
+        <form action="" method="post">
+            <fieldset>
+                <legend><b>Cadastro de clientes</b></legend>
+                <br>
+                <div class="inputBox">
+                    <input type="text"  name="id" id="name" required class="inputUser" required>
+                    <label for="name" class="labelInput">Nome completo</label>
+                </div>
+                <br>
+                <br>
+                <div class="inputBox">
+                    <input type="email"  name="email" id="email" class="inputUser" required>
+                    <label for="email" class="labelInput">Email</label>
+                </div>
+                <br>
+                <br>
+                <div class="inputBox">
+                    <input type="tel"  name="tel" id="tel" class="inputUser" required>
+                    <label for="tel" class="labelInput">Telefone</label>
+                </div>
+                <br>
+                <div class="inputBox">
+                    <p>Sexo</p>
+                    <input type="radio" name="gender" id="femGender" value="feminino" required>
+                    <label for="femGender">Feminino</label>
+                    <br>
+                    <input type="radio" name="gender" id="mascGender" value="masculino" required>
+                    <label for="mascGender">Masculino</label>
+                    <br>
+                    <input type="radio" name="gender" id="otherGender" value="outro" required>
+                    <label for="otherGender">Outro</label>
+                </div>
+                <br>
+                <br>
+                <label for="birth_date"><b>Data de nascimento:</b></label>
+                <input type="date" name="birth_date" id="birth_date" required>
+                <br>
+                <br>
+                <br>
+                <div class="inputBox">
+                    <input type="text" name="cep" id="cep" class="inputUser" required>
+                    <label for="cep" class="labelInput">Cep</label>   
+                </div>
+                <br>
+                <br>
+                <div class="inputBox">
+                    <input type="text" name="city" id="city" class="inputUser" required>
+                    <label for="city" class="labelInput">Cidade</label>
+                </div>
+                <br>
+                <br>
+                <div class="inputBox">
+                    <input type="text"  name="state" id="state" class="inputUser" required>
+                    <label for="state" class="labelInput">Estado</label>
+                </div>
+                <br>
+                <br>
+                <div class="inputBox">
+                    <input type="text" name="adress" id="adress" class="inputUser" required>
+                    <label for="adress" class="labelInput">Endereço</label>
+                </div>
+                <br>
+                <br>
+                <input type="submit" name="submit" id="submit">
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
