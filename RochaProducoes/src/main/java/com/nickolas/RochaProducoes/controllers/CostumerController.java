@@ -18,32 +18,32 @@ public class CostumerController {
     }
 
 
-    @PostMapping("create")
+    @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
     public Costumer createCostumer(@RequestBody Costumer costumer) {
         costumerService.createCostumer(costumer);
         return costumer;
     }
 
-    @GetMapping("findbyemail")
+    @GetMapping("/")
     @ResponseStatus(HttpStatus.OK)
     public Costumer findCostumerById(@RequestParam("email") String email) {
        return costumerService.getCostumerByEmail(email);
     }
 
-    @GetMapping("findall")
+    @GetMapping("")
     @ResponseStatus(HttpStatus.OK)
     public List<Costumer> findAllCostumers() {
         return costumerService.getAllCostumers();
     }
 
-    @PutMapping("create")
+    @PutMapping("")
     @ResponseStatus(HttpStatus.OK)
     public Costumer updateCostumer(@RequestBody Costumer costumer) {
        return costumerService.updateCostumer(costumer);
     }
 
-    @DeleteMapping("deletebyemail")
+    @DeleteMapping("")
     @ResponseStatus(HttpStatus.OK)
     public void deleteCostumerById(@RequestParam("email") String email) {
         costumerService.deleteCostumerByEmail(email);

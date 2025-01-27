@@ -20,8 +20,7 @@ public class CostumerService {
     }
 
     public Costumer getCostumerByEmail(String email) {
-        Costumer costumer = this.costumerRepository.getCostumerByCostumerEmail(email);
-        return costumer;
+        return this.costumerRepository.getCostumerByCostumerEmail(email);
     }
 
     public List<Costumer> getAllCostumers() {
