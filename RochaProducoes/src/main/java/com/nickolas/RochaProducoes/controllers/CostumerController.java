@@ -25,9 +25,9 @@ public class CostumerController {
         return costumer;
     }
 
-    @GetMapping("/")
+    @GetMapping("/{email}")
     @ResponseStatus(HttpStatus.OK)
-    public Costumer findCostumerById(@RequestParam("email") String email) {
+    public Costumer findCostumerById(@PathVariable("email") String email) {
        return costumerService.getCostumerByEmail(email);
     }
 
@@ -43,9 +43,9 @@ public class CostumerController {
        return costumerService.updateCostumer(costumer);
     }
 
-    @DeleteMapping("")
+    @DeleteMapping("/{email}")
     @ResponseStatus(HttpStatus.OK)
-    public void deleteCostumerById(@RequestParam("email") String email) {
+    public void deleteCostumerById(@PathVariable("email") String email) {
         costumerService.deleteCostumerByEmail(email);
     }
 
