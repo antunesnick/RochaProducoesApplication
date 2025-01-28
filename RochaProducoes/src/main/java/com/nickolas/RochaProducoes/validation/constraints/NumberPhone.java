@@ -14,6 +14,4 @@ public @interface NumberPhone {
     String message() default "{Número de telefone inválido}";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
-
-
 }

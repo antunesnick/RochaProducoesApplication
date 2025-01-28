@@ -40,7 +40,7 @@ public class CostumerController {
 
     @PutMapping("")
     @ResponseStatus(HttpStatus.OK)
-    public Costumer updateCostumer(@RequestBody Costumer costumer) {
+    public Costumer updateCostumer(@RequestBody @Valid Costumer costumer) {
        return costumerService.updateCostumer(costumer);
     }
 
