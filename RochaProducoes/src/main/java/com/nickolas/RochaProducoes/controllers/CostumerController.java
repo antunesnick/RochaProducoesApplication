@@ -2,6 +2,7 @@ package com.nickolas.RochaProducoes.controllers;
 
 import com.nickolas.RochaProducoes.models.Costumer;
 import com.nickolas.RochaProducoes.services.CostumerService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +21,7 @@ public class CostumerController {
 
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
-    public Costumer createCostumer(@RequestBody Costumer costumer) {
+    public Costumer createCostumer(@RequestBody  @Valid Costumer costumer) {
         costumerService.createCostumer(costumer);
         return costumer;
     }
