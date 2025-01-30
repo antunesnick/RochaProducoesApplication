@@ -43,11 +43,6 @@ function preenche_cep() {
     
 }
 
-
-
-
-
-
 document.getElementById("formCadastro").addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -82,11 +77,12 @@ document.getElementById("formCadastro").addEventListener('submit', function(even
     })
     .then(response => response.json())
     .then(data => {
+        alert("Cadastro realizado com sucesso!");
         console.log('Sucesso: ', data);
     })
     .catch((error) => {
+        alert("Erro ao realizar o cadastro tente novamente mais tarde.");
         console.error("Erro: ", error);
     });
 });
-
-
+ 
