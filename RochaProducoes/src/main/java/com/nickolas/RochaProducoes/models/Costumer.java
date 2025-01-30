@@ -25,6 +25,7 @@ public class Costumer {
 
     @Column(name = "costumer_email", nullable = false, unique = true)
     @Email(message = "Campo inválido")
+    @NotBlank(message = "Campo não informado")
     private String costumerEmail;
 
     @Column(name = "costumer_phone", nullable = false, length = 14)
