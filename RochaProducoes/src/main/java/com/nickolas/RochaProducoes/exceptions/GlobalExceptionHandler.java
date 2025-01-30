@@ -40,6 +40,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
         return ResponseEntity.unprocessableEntity().body(errorResponse);
     }
+    
 
     @Override
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -61,7 +62,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         logger.error("Failed to save entity with integrity problems: ", exception);
         return buildErrorResponse(
                 exception,
-                HttpStatus.BAD_REQUEST,
+                HttpStatus.CONFLICT,
                 request);
     }
 
