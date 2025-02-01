@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"> </script>
+    <title>Cadastro</title>
+</head>
+<body>
+    <main>
+        <h1>Crie sua conta</h1>
+        <div class="social-media">
+            <a href="#">
+                <img src="assets/google.png" alt="google">
+            </a>
+            <a href="#">
+                <img src="assets/facebook.png" alt="facebook">
+            </a>
+            <a href="#">
+                <img src="assets/linkedin.png" alt="linkedin">
+            </a>
+        </div>
+
+        <div class="alternative">
+            <span>OR</span>
+        </div>
+
+        <form action="#" method="post" id="formSignUp" novalidate>
+            <label for="name">
+                <span>Nome completo</span>
+                <input type="text" id="name" name="name" required minlength="3">
+                <small class="error-message">Nome deve ter pelo menos 3 caracteres</small>
+            </label>
+
+            <label for="email">
+                <span>Email</span>
+                <input type="email" id="email" name="email" required>
+                <small class="error-message">Digite um email válido.</small>
+            </label>
+
+            <label for="password" >
+                <span>Senha</span>
+                <input type="password" id="password" name="password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$"
+                minlength="8">
+                <small class="error-message">Sua senha deve conter no mínimo: 8 caracters, uma letra maiuscula, uma letra minuscula.</small>
+            </label>
+
+            <label for="confirm-password" >
+                <span>Confirme sua senha</span>
+                <input type="password" id="confirm-password" name="confirm-password" class="errorInput" required minlength="8">
+                <small class="error-message">As senhas não são iguais.</small>
+            </label>
+
+            <input type="submit" value="Cadastre-se">
+        </form>
+    </main>
+
+    <section class="images">
+        <img src="assets/mobile.svg" alt="Celular">
+        <div class="circle"></div>
+    </section>
+
+</body>
+</html>
