@@ -1,5 +1,6 @@
+const formSignUp = document.getElementById("formSignUp");
+
 document.addEventListener("DOMContentLoaded", function() {
-    const formSignUp = document.getElementById("formSignUp");
 
 
     formSignUp.addEventListener("submit", function(event) {
@@ -37,6 +38,34 @@ document.addEventListener("DOMContentLoaded", function() {
         if(!isValid) {
             event.preventDefault();
         }
+        else {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            const user = {
+                userName: name,
+                userEmail: email,
+                userPassword: password
+            };
+
+            fetch("http://localhost:8080/user", {
+                method: "POST",
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            }).then(response => response.json())
+                .then(data => {
+                    alert("Usuario cadastrado com sucesso.");
+                    console.log("sucesso: " +data);
+                }).catch(error => {
+                    alert("Usuario não cadastrado, tente novamente mais tarde.")
+                    console.error("Erro: " + error);
+                    event.preventDefault();
+            })
+
+        }
 
         formSignUp.querySelectorAll("input[required]").forEach(input => {
             input.addEventListener("input", function () {
@@ -45,3 +74,4 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+

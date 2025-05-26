@@ -68,7 +68,7 @@ document.getElementById("formCadastro").addEventListener('submit', function(even
         costumerAddress: address
     }
 
-    fetch('http://localhost:8080/costumer/create', {
+    fetch('http://localhost:8080/costumer/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

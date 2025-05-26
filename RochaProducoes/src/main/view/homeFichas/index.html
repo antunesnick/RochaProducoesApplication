@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocha Produções - Cadastro de Fichas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            background: rgba(20, 20, 20, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        h1, h2 {
+            color: #f8f8f8;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            font-size: 16px;
+            background: #333;
+            color: #fff;
+        }
+        button {
+            background-color: #d4af37;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #b8972b;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid #666;
+            padding: 12px;
+            text-align: left;
+            color: #fff;
+        }
+        th {
+            background-color: #d4af37;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rocha Produções</h1>
+        <h2>Cadastro de Fichas Fotográficas</h2>
+        <form id="cadastroForm">
+            <input type="text" id="nome" placeholder="Nome do Cliente" required>
+            <input type="date" id="data" required>
+            <select id="tipo">
+                <option value="Casamento">Casamento</option>
+                <option value="Aniversário">Aniversário</option>
+                <option value="Ensaio Infantil">Ensaio Infantil</option>
+                <option value="Outros">Outros</option>
+            </select>
+            <input type="text" id="local" placeholder="Local da Sessão" required>
+            <input type="number" id="preco" placeholder="Preço" required>
+            <textarea id="observacoes" placeholder="Observações" rows="3"></textarea>
+            <button type="submit">Cadastrar</button>
+        </form>
+        
+        <h2>Fichas Cadastradas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Data</th>
+                    <th>Tipo</th>
+                    <th>Local</th>
+                    <th>Preço</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="listaFichas">
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let nome = document.getElementById('nome').value;
+            let data = document.getElementById('data').value;
+            let tipo = document.getElementById('tipo').value;
+            let local = document.getElementById('local').value;
+            let preco = document.getElementById('preco').value;
+            let observacoes = document.getElementById('observacoes').value;
+            
+            let tabela = document.getElementById('listaFichas');
+            let novaLinha = tabela.insertRow();
+            novaLinha.innerHTML = `<td>${nome}</td><td>${data}</td><td>${tipo}</td><td>${local}</td><td>R$ ${preco}</td><td><button onclick="removerLinha(this)">Excluir</button></td>`;
+            
+            document.getElementById('cadastroForm').reset();
+        });
+
+        function removerLinha(botao) {
+            let linha = botao.parentNode.parentNode;
+            linha.parentNode.removeChild(linha);
+        }
+    </script>
+</body>
+</html>
