@@ -25,7 +25,7 @@ Além do desenvolvimento técnico, este projeto também tem como objetivo a docu
 - [ ] **Sessão de login**: Autenticação e gerenciamento de sessões.
 - [ ] **Cadastro de fichas**: Registro de informações detalhadas de projetos ou serviços realizados.
 - [ ] **Responsividade**: Interface adaptada para dispositivos móveis.
-- [ ] **Integração via API com os Correios**: Consulta automática de endereços com base no CEP.
+- [x] **Integração via API com o serviço Viacep**: Consulta automática de endereços com base no CEP.
 
 ---
 
