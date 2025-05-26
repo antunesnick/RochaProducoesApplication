@@ -1,6 +1,7 @@
 package com.nickolas.RochaProducoes.models;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
@@ -17,24 +18,22 @@ public class User {
 
     @Column(name = "user_name", nullable = false)
     @NotBlank(message = "Campo em branco.")
+    @JsonProperty("userName")
     private String userName;
 
     @Column(name = "user_password", nullable = false)
     @NotBlank(message = "Campo em branco.")
-    private String password;
+    @JsonProperty("userPassword")
+    private String userPassword;
 
     @Column(name = "user_email", unique = true, nullable = false)
     @NotBlank(message = "Campo em branco.")
-    private String email;
+    @JsonProperty("userEmail")
+    private String userEmail;
 
     public UUID getUserId() {
         return userId;
     }
-
-    public void setUserId(UUID userId) {
-        this.userId = userId;
-    }
-
     public String getUserName() {
         return userName;
     }
@@ -43,19 +42,19 @@ public class User {
         this.userName = userName;
     }
 
-    public String getPassword() {
-        return password;
+    public String getUserPassword() {
+        return userPassword;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUserPassword(String password) {
+        this.userPassword = password;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUserEmail(String email) {
+        this.userEmail = email;
     }
 }

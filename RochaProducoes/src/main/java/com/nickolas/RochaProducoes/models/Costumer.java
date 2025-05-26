@@ -6,7 +6,6 @@ import com.nickolas.RochaProducoes.validation.constraints.NumberPhone;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import org.hibernate.validator.constraints.Length;
 
 import java.util.Date;
 import java.util.UUID;

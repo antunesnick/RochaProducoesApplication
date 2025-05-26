@@ -3,6 +3,8 @@ package com.nickolas.RochaProducoes.controllers;
 
 import com.nickolas.RochaProducoes.models.User;
 import com.nickolas.RochaProducoes.services.UserService;
+import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,7 +19,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping(path = "")
+    @GetMapping(path = "/{email}")
     public User getUser(@PathVariable String email) {
         return userService.findUserByEmail(email);
     }
@@ -28,17 +30,18 @@ public class UserController {
     }
 
     @PostMapping(path = "")
-    public User createUser(@RequestBody User user) {
+    @ResponseStatus(HttpStatus.CREATED)
+    public User createUser(@RequestBody @Valid User user) {
         userService.createUser(user);
         return user;
     }
 
     @PutMapping(path = "")
-    public User updateUser(@RequestBody User user) {
+    public User updateUser(@RequestBody @Valid  User user) {
         return userService.updateUser(user);
     }
 
-    @DeleteMapping(path = "")
+    @DeleteMapping(path = "/{email}")
     public void deleteUser(@PathVariable String email) {
         userService.deleteUser(email);
     }

@@ -17,7 +17,7 @@ public class UserService {
     }
 
     public User findUserByEmail(String email) {
-        return this.userRepository.findUserByEmail(email);
+        return this.userRepository.findUserByUserEmail(email);
     }
 
     public List<User> findAllUsers() {
@@ -29,7 +29,7 @@ public class UserService {
     }
 
     public User updateUser(User user) {
-        if(findUserByEmail(user.getEmail()) != null) {
+        if(findUserByEmail(user.getUserEmail()) != null) {
             this.userRepository.save(user);
             return user;
         };
