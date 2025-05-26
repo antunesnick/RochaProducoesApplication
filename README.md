@@ -21,11 +21,11 @@ Além do desenvolvimento técnico, este projeto também tem como objetivo a docu
 ## 🌟 Funcionalidades
 
 - [x] **Cadastro de clientes**: Permite armazenar informações de clientes para gestão eficiente.
-- [ ] **Cadastro de usuários**: Criação de contas com níveis de acesso e permissões.
+- [X] **Cadastro de usuários**: Criação de contas com níveis de acesso e permissões.
 - [ ] **Sessão de login**: Autenticação e gerenciamento de sessões.
 - [ ] **Cadastro de fichas**: Registro de informações detalhadas de projetos ou serviços realizados.
 - [ ] **Responsividade**: Interface adaptada para dispositivos móveis.
-- [x] **Integração via API com o serviço Viacep**: Consulta automática de endereços com base no CEP.
+- [X] **Integração via API com o VIACEP**: Consulta automática de endereços com base no CEP.
 
 ---
 
